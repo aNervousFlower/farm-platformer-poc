@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=4 uid="uid://cg24pgehl3n6m"]
+
+[ext_resource type="Texture2D" uid="uid://btse7c36aikkx" path="res://assets/tileset.png" id="1_mf8pb"]
+[ext_resource type="PackedScene" uid="uid://dw3nmgmr8pdqv" path="res://src/Actors/farmer.tscn" id="2_i81sh"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i81sh"]
+texture = ExtResource("1_mf8pb")
+texture_region_size = Vector2i(80, 80)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-40, -40, 40, -40, 40, 40, -40, 40)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-40, -40, 40, -40, 40, 40, -40, 40)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-40, 40, 40, -40, 40, 40)
+1:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-40, 40, 40, 0, 40, 40)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-40, 0, 40, -40, 40, 40, -40, 40, -40, 0)
+
+[sub_resource type="TileSet" id="TileSet_ihoc8"]
+tile_size = Vector2i(80, 80)
+physics_layer_0/collision_layer = 8
+physics_layer_0/collision_mask = 0
+sources/1 = SubResource("TileSetAtlasSource_i81sh")
+
+[node name="LevelTemplate" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAAQAAQAAAAAAAAAAAAUAAQAAAAAAAAAAAAYAAQAAAAAAAAAAAAcAAQAAAAAAAAABAAcAAQAAAAAAAAACAAcAAQAAAAAAAAADAAcAAQAAAAAAAAAEAAcAAQAAAAAAAAAFAAcAAQAAAAAAAAAGAAcAAQAAAAAAAAAHAAcAAQAAAAAAAAAIAAcAAQAAAAAAAAAJAAcAAQAAAAAAAAAKAAcAAQAAAAAAAAALAAcAAQAAAAAAAAAMAAcAAQAAAAAAAAANAAcAAQAAAAAAAAAOAAcAAQAAAAAAAAAOAAYAAQAAAAAAAAAOAAUAAQAAAAAAAAAOAAQAAQAAAAAAAAAOAAMAAQAAAAAAAAAOAAIAAQAAAAAAAAAOAAEAAQAAAAAAAAAOAAAAAQAAAAAAAAAEAAYAAQAAAAAAAAAFAAYAAQAAAAAAAAAGAAYAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_ihoc8")
+
+[node name="Farmer" parent="." instance=ExtResource("2_i81sh")]
+position = Vector2(203, 231)

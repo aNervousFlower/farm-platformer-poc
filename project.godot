@@ -15,6 +15,12 @@ run/main_scene="uid://cg24pgehl3n6m"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/aspect="expand"
+
 [dotnet]
 
 project/assembly_name="Farm Platformer POC"

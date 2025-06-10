@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dw3nmgmr8pdqv"]
+[gd_scene load_steps=5 format=3 uid="uid://dw3nmgmr8pdqv"]
 
 [ext_resource type="Script" uid="uid://byvdj22cdnr4m" path="res://src/Actors/farmer.gd" id="1_82e1h"]
 [ext_resource type="Texture2D" uid="uid://cfmoagbubfs2u" path="res://assets/farmer.png" id="1_6265n"]
@@ -6,11 +6,13 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_82e1h"]
 size = Vector2(80, 81)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dvj68"]
+size = Vector2(88, 88)
+
 [node name="Farmer" type="CharacterBody2D"]
 collision_mask = 8
 script = ExtResource("1_82e1h")
 speed = Vector2(800, 1400)
-metadata/_edit_group_ = true
 
 [node name="Farmer" type="Sprite2D" parent="."]
 position = Vector2(0, -48)
@@ -19,3 +21,33 @@ texture = ExtResource("1_6265n")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -40.5)
 shape = SubResource("RectangleShape2D_82e1h")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -174)
+limit_left = 0
+limit_top = 0
+limit_smoothed = true
+position_smoothing_speed = 7.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.0
+drag_right_margin = 0.0
+
+[node name="EnemyDetector" type="Area2D" parent="."]
+modulate = Color(0, 0, 1, 1)
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetector"]
+position = Vector2(0, -41)
+shape = SubResource("RectangleShape2D_dvj68")
+
+[node name="CameraSmoothingTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+autostart = true
+
+[connection signal="area_entered" from="EnemyDetector" to="." method="_on_enemy_detector_area_entered"]
+[connection signal="body_entered" from="EnemyDetector" to="." method="_on_enemy_detector_body_entered"]
+[connection signal="timeout" from="CameraSmoothingTimer" to="." method="_on_camera_smoothing_timer_timeout"]

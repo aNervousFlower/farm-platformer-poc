@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://cg24pgehl3n6m"]
+[gd_scene load_steps=8 format=4 uid="uid://cg24pgehl3n6m"]
 
 [ext_resource type="Texture2D" uid="uid://btse7c36aikkx" path="res://assets/tileset.png" id="1_mf8pb"]
 [ext_resource type="Texture2D" uid="uid://dxx7afl3tfs71" path="res://assets/background.png" id="1_p7jdc"]
 [ext_resource type="PackedScene" uid="uid://dw3nmgmr8pdqv" path="res://src/Actors/farmer.tscn" id="2_i81sh"]
 [ext_resource type="PackedScene" uid="uid://pj1jsrbfu280" path="res://src/Actors/enemy.tscn" id="3_ihoc8"]
+[ext_resource type="PackedScene" uid="uid://bnm7d402wrco3" path="res://src/Objects/coin.tscn" id="5_1vgul"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i81sh"]
 texture = ExtResource("1_mf8pb")
@@ -60,5 +61,11 @@ position = Vector2(1923, 943)
 
 [node name="Enemy3" parent="." instance=ExtResource("3_ihoc8")]
 position = Vector2(2908, 943)
+
+[node name="Coin" parent="." instance=ExtResource("5_1vgul")]
+position = Vector2(1482, 723)
+
+[node name="Coin2" parent="." instance=ExtResource("5_1vgul")]
+position = Vector2(1635, 723)
 
 [editable path="Farmer"]

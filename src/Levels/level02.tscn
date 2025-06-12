@@ -1,14 +1,14 @@
-[gd_scene load_steps=9 format=4 uid="uid://cnbrn6wfd6ntd"]
+[gd_scene load_steps=9 format=4 uid="uid://g06yyv10ct1k"]
 
-[ext_resource type="Texture2D" uid="uid://dxx7afl3tfs71" path="res://assets/background.png" id="1_gu6my"]
-[ext_resource type="Texture2D" uid="uid://btse7c36aikkx" path="res://assets/tileset.png" id="2_sxvnd"]
-[ext_resource type="PackedScene" uid="uid://dw3nmgmr8pdqv" path="res://src/Actors/farmer.tscn" id="3_ga6n7"]
-[ext_resource type="PackedScene" uid="uid://pj1jsrbfu280" path="res://src/Actors/enemy.tscn" id="4_pffks"]
-[ext_resource type="PackedScene" uid="uid://bnm7d402wrco3" path="res://src/Objects/coin.tscn" id="5_owt4d"]
-[ext_resource type="PackedScene" uid="uid://dc5sb02bq2306" path="res://src/Objects/portal.tscn" id="6_c2ei7"]
+[ext_resource type="Texture2D" uid="uid://dxx7afl3tfs71" path="res://assets/background.png" id="1_ofuqg"]
+[ext_resource type="Texture2D" uid="uid://btse7c36aikkx" path="res://assets/tileset.png" id="2_pmire"]
+[ext_resource type="PackedScene" uid="uid://dw3nmgmr8pdqv" path="res://src/Actors/farmer.tscn" id="3_1kjxy"]
+[ext_resource type="PackedScene" uid="uid://pj1jsrbfu280" path="res://src/Actors/enemy.tscn" id="4_2ewwl"]
+[ext_resource type="PackedScene" uid="uid://bnm7d402wrco3" path="res://src/Objects/coin.tscn" id="5_6uqap"]
+[ext_resource type="PackedScene" uid="uid://dc5sb02bq2306" path="res://src/Objects/portal.tscn" id="6_pmire"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i81sh"]
-texture = ExtResource("2_sxvnd")
+texture = ExtResource("2_pmire")
 texture_region_size = Vector2i(80, 80)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-40, -40, 40, -40, 40, 40, -40, 40)
@@ -41,7 +41,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_gu6my")
+texture = ExtResource("1_ofuqg")
 metadata/_edit_use_anchors_ = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -49,7 +49,7 @@ position = Vector2(0, 382)
 tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAAQAAQAAAAAAAAAAAAUAAQAAAAAAAAAAAAYAAQAAAAAAAAAAAAcAAQAAAAAAAAABAAcAAQAAAAAAAAACAAcAAQAAAAAAAAADAAcAAQAAAAAAAAAEAAcAAQAAAAAAAAAFAAcAAQAAAAAAAAAGAAcAAQAAAAAAAAAHAAcAAQAAAAAAAAAIAAcAAQAAAAAAAAAJAAcAAQAAAAAAAAAKAAcAAQAAAAAAAAALAAcAAQAAAAAAAAAMAAcAAQAAAAAAAAANAAcAAQAAAAAAAAAOAAcAAQAAAAAAAAAPAAcAAQAAAAAAAAAQAAcAAQAAAAAAAAARAAcAAQAAAAAAAAASAAcAAQAAAAAAAAATAAcAAQAAAAAAAAAUAAcAAQAAAAAAAAAAAAgAAQAAAAAAAAABAAgAAQAAAAAAAAACAAgAAQAAAAAAAAADAAgAAQAAAAAAAAAEAAgAAQAAAAAAAAAFAAgAAQAAAAAAAAAGAAgAAQAAAAAAAAAHAAgAAQAAAAAAAAAIAAgAAQAAAAAAAAAJAAgAAQAAAAAAAAAKAAgAAQAAAAAAAAALAAgAAQAAAAAAAAAMAAgAAQAAAAAAAAANAAgAAQAAAAAAAAAOAAgAAQAAAAAAAAAPAAgAAQAAAAAAAAAQAAgAAQAAAAAAAAARAAgAAQAAAAAAAAASAAgAAQAAAAAAAAATAAgAAQAAAAAAAAAUAAgAAQAAAAAAAAAVAAcAAQAAAAAAAAAWAAcAAQAAAAAAAAAXAAgAAQAAAAAAAAAXAAcAAQAAAAAAAAAVAAgAAQAAAAAAAAAWAAgAAQAAAAAAAAABAAUAAQAAAAAAAAABAAYAAQAAAAAAAAAAAAkAAQAAAAAAAAABAAkAAQAAAAAAAAACAAkAAQAAAAAAAAADAAkAAQAAAAAAAAAEAAkAAQAAAAAAAAAFAAkAAQAAAAAAAAAGAAkAAQAAAAAAAAAHAAkAAQAAAAAAAAAIAAkAAQAAAAAAAAAJAAkAAQAAAAAAAAAKAAkAAQAAAAAAAAALAAkAAQAAAAAAAAAMAAkAAQAAAAAAAAANAAkAAQAAAAAAAAAOAAkAAQAAAAAAAAAPAAkAAQAAAAAAAAAQAAkAAQAAAAAAAAARAAkAAQAAAAAAAAASAAkAAQAAAAAAAAATAAkAAQAAAAAAAAAUAAkAAQAAAAAAAAAVAAkAAQAAAAAAAAAWAAkAAQAAAAAAAAAXAAkAAQAAAAAAAAABAAAAAQAAAAAAAAABAAEAAQAAAAAAAAABAAIAAQAAAAAAAAABAAMAAQAAAAAAAAABAAQAAQAAAAAAAAAAAPz/AQAAAAAAAAAAAP3/AQAAAAAAAAAAAP7/AQAAAAAAAAAAAP//AQAAAAAAAAABAPz/AQAAAAAAAAABAP3/AQAAAAAAAAABAP7/AQAAAAAAAAABAP//AQAAAAAAAAAAAPv/AQAAAAAAAAABAPv/AQAAAAAAAAAAAAoAAQAAAAAAAAABAAoAAQAAAAAAAAACAAoAAQAAAAAAAAADAAoAAQAAAAAAAAAEAAoAAQAAAAAAAAAFAAoAAQAAAAAAAAAGAAoAAQAAAAAAAAAHAAoAAQAAAAAAAAAIAAoAAQAAAAAAAAAJAAoAAQAAAAAAAAAKAAoAAQAAAAAAAAALAAoAAQAAAAAAAAAMAAoAAQAAAAAAAAANAAoAAQAAAAAAAAAOAAoAAQAAAAAAAAAPAAoAAQAAAAAAAAAQAAoAAQAAAAAAAAARAAoAAQAAAAAAAAASAAoAAQAAAAAAAAATAAoAAQAAAAAAAAAUAAoAAQAAAAAAAAAVAAoAAQAAAAAAAAAWAAoAAQAAAAAAAAAXAAoAAQAAAAAAAAAWAAYAAQAAAAAAAAAXAAYAAQAAAAAAAAAWAPv/AQAAAAAAAAAWAPz/AQAAAAAAAAAWAP3/AQAAAAAAAAAWAP7/AQAAAAAAAAAWAP//AQAAAAAAAAAWAAAAAQAAAAAAAAAWAAEAAQAAAAAAAAAWAAIAAQAAAAAAAAAWAAMAAQAAAAAAAAAWAAQAAQAAAAAAAAAWAAUAAQAAAAAAAAAXAPv/AQAAAAAAAAAXAPz/AQAAAAAAAAAXAP3/AQAAAAAAAAAXAP7/AQAAAAAAAAAXAP//AQAAAAAAAAAXAAAAAQAAAAAAAAAXAAEAAQAAAAAAAAAXAAIAAQAAAAAAAAAXAAMAAQAAAAAAAAAXAAQAAQAAAAAAAAAXAAUAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_ihoc8")
 
-[node name="Farmer" parent="." instance=ExtResource("3_ga6n7")]
+[node name="Farmer" parent="." instance=ExtResource("3_1kjxy")]
 position = Vector2(301, 940)
 metadata/_edit_group_ = true
 
@@ -57,14 +57,14 @@ metadata/_edit_group_ = true
 limit_right = 1920
 limit_bottom = 1262
 
-[node name="Enemy" parent="." instance=ExtResource("4_pffks")]
+[node name="Enemy" parent="." instance=ExtResource("4_2ewwl")]
 position = Vector2(1369, 941)
 
-[node name="Coin" parent="." instance=ExtResource("5_owt4d")]
+[node name="Coin" parent="." instance=ExtResource("5_6uqap")]
 position = Vector2(916, 757)
 metadata/_edit_group_ = true
 
-[node name="Portal" parent="." instance=ExtResource("6_c2ei7")]
+[node name="Portal" parent="." instance=ExtResource("6_pmire")]
 position = Vector2(1646, 941)
 metadata/_edit_group_ = true
 

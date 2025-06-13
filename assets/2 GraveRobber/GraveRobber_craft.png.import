@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfmoagbubfs2u"
-path="res://.godot/imported/farmer.png-71a3197e90bdcc4093b4739f7a6da759.ctex"
+uid="uid://b6unov01sf1"
+path="res://.godot/imported/GraveRobber_craft.png-609bd6e857f9be460d06d0b20ca4e451.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/farmer.png"
-dest_files=["res://.godot/imported/farmer.png-71a3197e90bdcc4093b4739f7a6da759.ctex"]
+source_file="res://assets/2 GraveRobber/GraveRobber_craft.png"
+dest_files=["res://.godot/imported/GraveRobber_craft.png-609bd6e857f9be460d06d0b20ca4e451.ctex"]
 
 [params]
 

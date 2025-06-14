@@ -16,8 +16,8 @@ func _on_enemy_detector_area_entered(_area: Area2D) -> void:
 
 func _on_enemy_detector_body_entered(_body: Node2D) -> void:
 	is_dead = true
-	$farmer.play("death")
-	await $farmer.animation_finished
+	$AnimationPlayer.play("death")
+	await $AnimationPlayer.animation_finished
 	queue_free()
 
 
@@ -66,10 +66,10 @@ func set_sprite_animation() -> void:
 		return
 	
 	if Input.is_action_pressed("move_right"):
-		$farmer.play("walk")
+		$farmer.play("run")
 		$farmer.flip_h = false
 	elif Input.is_action_pressed("move_left"):
-		$farmer.play("walk")
+		$farmer.play("run")
 		$farmer.flip_h = true
 	else:
 		$farmer.play("idle")

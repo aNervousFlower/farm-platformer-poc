@@ -58,6 +58,9 @@ metadata/_edit_group_ = true
 limit_right = 7760
 limit_bottom = 1262
 
+[node name="AnimatedSprite2D" parent="Farmer" index="5"]
+frame = 0
+
 [node name="Enemy" parent="." instance=ExtResource("4_pffks")]
 position = Vector2(2013, 940)
 

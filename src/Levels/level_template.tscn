@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dxx7afl3tfs71" path="res://assets/background.png" id="1_gu6my"]
 [ext_resource type="Texture2D" uid="uid://btse7c36aikkx" path="res://assets/tileset.png" id="2_sxvnd"]
 [ext_resource type="PackedScene" uid="uid://dw3nmgmr8pdqv" path="res://src/Actors/farmer.tscn" id="3_ga6n7"]
-[ext_resource type="PackedScene" uid="uid://pj1jsrbfu280" path="res://src/Actors/enemy.tscn" id="4_pffks"]
+[ext_resource type="PackedScene" uid="uid://pj1jsrbfu280" path="res://src/Actors/boar.tscn" id="4_pffks"]
 [ext_resource type="PackedScene" uid="uid://bnm7d402wrco3" path="res://src/Objects/coin.tscn" id="5_owt4d"]
 [ext_resource type="PackedScene" uid="uid://dc5sb02bq2306" path="res://src/Objects/portal.tscn" id="6_c2ei7"]
 

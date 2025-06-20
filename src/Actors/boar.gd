@@ -5,10 +5,12 @@ func _ready() -> void:
 	velocity.x = -speed.x
 
 
-func _on_stomp_detector_body_entered(body: Node2D) -> void:
-	if body.global_position.y > $StompDetector.global_position.y:
-		return
-	queue_free()
+func _on_hit_detector_area_entered(area: Area2D) -> void:
+	if area.name == "SwordAttack":
+		is_dead = true
+		$boar.play("hit")
+		await $boar.animation_finished
+		queue_free()
 
 
 func _physics_process(delta: float) -> void:

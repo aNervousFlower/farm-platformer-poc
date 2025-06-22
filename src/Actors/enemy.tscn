@@ -1,89 +1,89 @@
 [gd_scene load_steps=29 format=3 uid="uid://pj1jsrbfu280"]
 
-[ext_resource type="Script" uid="uid://g6s7jaun3c2s" path="res://src/Actors/boar.gd" id="1_sru1b"]
-[ext_resource type="Texture2D" uid="uid://bsxxah8ptl710" path="res://assets/Legacy Fantasy High Forest/Mob/Boar/Hit-Vanish/Hit-Sheet.png" id="2_8o17k"]
-[ext_resource type="Texture2D" uid="uid://bxcuf5sh3sr7n" path="res://assets/Legacy Fantasy High Forest/Mob/Boar/Idle/Idle-Sheet.png" id="3_alcpn"]
-[ext_resource type="Texture2D" uid="uid://c558cjk8qfnar" path="res://assets/Legacy Fantasy High Forest/Mob/Boar/Run/Run-Sheet.png" id="4_ca6ys"]
-[ext_resource type="Texture2D" uid="uid://de1f1phcnbkyn" path="res://assets/Legacy Fantasy High Forest/Mob/Boar/Walk/Walk-Base-Sheet.png" id="5_0su25"]
+[ext_resource type="Script" uid="uid://g6s7jaun3c2s" path="res://src/Actors/enemy.gd" id="1_j05ww"]
+[ext_resource type="Texture2D" uid="uid://bsxxah8ptl710" path="res://assets/Legacy Fantasy High Forest/Mob/Boar/Hit-Vanish/Hit-Sheet.png" id="2_e2qeo"]
+[ext_resource type="Texture2D" uid="uid://bxcuf5sh3sr7n" path="res://assets/Legacy Fantasy High Forest/Mob/Boar/Idle/Idle-Sheet.png" id="3_0shdb"]
+[ext_resource type="Texture2D" uid="uid://c558cjk8qfnar" path="res://assets/Legacy Fantasy High Forest/Mob/Boar/Run/Run-Sheet.png" id="4_j7h6i"]
+[ext_resource type="Texture2D" uid="uid://de1f1phcnbkyn" path="res://assets/Legacy Fantasy High Forest/Mob/Boar/Walk/Walk-Base-Sheet.png" id="5_ymbuu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sl7k1"]
-atlas = ExtResource("2_8o17k")
+atlas = ExtResource("2_e2qeo")
 region = Rect2(0, 0, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mcw83"]
-atlas = ExtResource("2_8o17k")
+atlas = ExtResource("2_e2qeo")
 region = Rect2(48, 0, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jpp6a"]
-atlas = ExtResource("2_8o17k")
+atlas = ExtResource("2_e2qeo")
 region = Rect2(96, 0, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ggi6l"]
-atlas = ExtResource("2_8o17k")
+atlas = ExtResource("2_e2qeo")
 region = Rect2(144, 0, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xpq6i"]
-atlas = ExtResource("3_alcpn")
+atlas = ExtResource("3_0shdb")
 region = Rect2(0, 0, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_elp1l"]
-atlas = ExtResource("3_alcpn")
+atlas = ExtResource("3_0shdb")
 region = Rect2(48, 0, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sudbj"]
-atlas = ExtResource("3_alcpn")
+atlas = ExtResource("3_0shdb")
 region = Rect2(96, 0, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y0g2e"]
-atlas = ExtResource("3_alcpn")
+atlas = ExtResource("3_0shdb")
 region = Rect2(144, 0, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ddb7i"]
-atlas = ExtResource("4_ca6ys")
+atlas = ExtResource("4_j7h6i")
 region = Rect2(0, 0, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4svre"]
-atlas = ExtResource("4_ca6ys")
+atlas = ExtResource("4_j7h6i")
 region = Rect2(48, 0, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e01y4"]
-atlas = ExtResource("4_ca6ys")
+atlas = ExtResource("4_j7h6i")
 region = Rect2(96, 0, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kdvie"]
-atlas = ExtResource("4_ca6ys")
+atlas = ExtResource("4_j7h6i")
 region = Rect2(144, 0, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_48ka1"]
-atlas = ExtResource("4_ca6ys")
+atlas = ExtResource("4_j7h6i")
 region = Rect2(192, 0, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t8t61"]
-atlas = ExtResource("4_ca6ys")
+atlas = ExtResource("4_j7h6i")
 region = Rect2(240, 0, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mxsh1"]
-atlas = ExtResource("5_0su25")
+atlas = ExtResource("5_ymbuu")
 region = Rect2(0, 0, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8v7wo"]
-atlas = ExtResource("5_0su25")
+atlas = ExtResource("5_ymbuu")
 region = Rect2(48, 0, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_txjue"]
-atlas = ExtResource("5_0su25")
+atlas = ExtResource("5_ymbuu")
 region = Rect2(96, 0, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_13xby"]
-atlas = ExtResource("5_0su25")
+atlas = ExtResource("5_ymbuu")
 region = Rect2(144, 0, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s1gwb"]
-atlas = ExtResource("5_0su25")
+atlas = ExtResource("5_ymbuu")
 region = Rect2(192, 0, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ewraq"]
-atlas = ExtResource("5_0su25")
+atlas = ExtResource("5_ymbuu")
 region = Rect2(240, 0, 48, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vo1w1"]
@@ -101,7 +101,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ggi6l")
 }],
-"loop": false,
+"loop": true,
 "name": &"hit",
 "speed": 5.0
 }, {
@@ -172,20 +172,19 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_82e1h"]
 size = Vector2(43, 29)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e2qeo"]
-radius = 14.0
-height = 44.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j05ww"]
+size = Vector2(61, 10)
 
 [node name="Boar" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 9
-script = ExtResource("1_sru1b")
+script = ExtResource("1_j05ww")
 metadata/_edit_group_ = true
 
 [node name="boar" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_vo1w1")
-animation = &"hit"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -196,14 +195,13 @@ shape = SubResource("RectangleShape2D_82e1h")
 position = Vector2(-0.999999, -16)
 scale = Vector2(2.5, 1.6)
 
-[node name="HitDetector" type="Area2D" parent="."]
+[node name="StompDetector" type="Area2D" parent="."]
+modulate = Color(0, 0.32549, 1, 1)
+position = Vector2(0, -29)
 collision_layer = 2
-monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitDetector"]
-modulate = Color(0, 0, 1, 1)
-position = Vector2(-2, -14)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_e2qeo")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StompDetector"]
+position = Vector2(-1.5, -5)
+shape = SubResource("RectangleShape2D_j05ww")
 
-[connection signal="area_entered" from="HitDetector" to="." method="_on_hit_detector_area_entered"]
+[connection signal="body_entered" from="StompDetector" to="." method="_on_stomp_detector_body_entered"]

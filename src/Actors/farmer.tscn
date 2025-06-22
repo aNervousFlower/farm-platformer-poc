@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://dw3nmgmr8pdqv"]
+[gd_scene load_steps=67 format=3 uid="uid://dw3nmgmr8pdqv"]
 
 [ext_resource type="Script" uid="uid://byvdj22cdnr4m" path="res://src/Actors/farmer.gd" id="1_82e1h"]
 [ext_resource type="Texture2D" uid="uid://bn5hycg5ef2bq" path="res://assets/Legacy Fantasy High Forest/Character/Dead/Dead-Sheet.png" id="2_v7tbs"]
@@ -56,6 +56,66 @@ region = Rect2(128, 0, 64, 80)
 [sub_resource type="AtlasTexture" id="AtlasTexture_6aelm"]
 atlas = ExtResource("3_hdkvh")
 region = Rect2(192, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmgpc"]
+atlas = ExtResource("5_v7ukj")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7tgpd"]
+atlas = ExtResource("5_v7ukj")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mw6no"]
+atlas = ExtResource("5_v7ukj")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nn03p"]
+atlas = ExtResource("5_v7ukj")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfto4"]
+atlas = ExtResource("5_v7ukj")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mua76"]
+atlas = ExtResource("5_v7ukj")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37jr6"]
+atlas = ExtResource("5_v7ukj")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uklbr"]
+atlas = ExtResource("5_v7ukj")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjkyj"]
+atlas = ExtResource("5_v7ukj")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1wau"]
+atlas = ExtResource("5_v7ukj")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52a0e"]
+atlas = ExtResource("5_v7ukj")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfjwf"]
+atlas = ExtResource("5_v7ukj")
+region = Rect2(704, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifcux"]
+atlas = ExtResource("5_v7ukj")
+region = Rect2(768, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3ewr"]
+atlas = ExtResource("5_v7ukj")
+region = Rect2(832, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnouu"]
+atlas = ExtResource("5_v7ukj")
+region = Rect2(896, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oheno"]
 atlas = ExtResource("4_6t6hk")
@@ -215,6 +275,56 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_mmgpc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7tgpd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mw6no")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nn03p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfto4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mua76")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_37jr6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uklbr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjkyj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1wau")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52a0e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfjwf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ifcux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3ewr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hnouu")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_oheno")
 }, {
 "duration": 1.0,
@@ -225,7 +335,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"jump_down",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -271,7 +381,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"jump_up",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -338,10 +448,8 @@ gravity = 2000.0
 [node name="farmer" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -24)
 sprite_frames = SubResource("SpriteFrames_vjjp7")
-animation = &"melee_attack"
+animation = &"jump_down"
 autoplay = "idle"
-frame = 3
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -24)

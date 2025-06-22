@@ -2,8 +2,6 @@ extends Actor
 
 @export var stomp_impulse: float = 1000.0
 
-var is_dead: bool = false
-
 
 # Prevents Camera starting outside limits on start
 func _on_camera_smoothing_timer_timeout() -> void:
@@ -12,8 +10,9 @@ func _on_camera_smoothing_timer_timeout() -> void:
 
 func _on_enemy_detector_body_entered(_body: Node2D) -> void:
 	is_dead = true
-	$AnimationPlayer.play("death")
-	await $AnimationPlayer.animation_finished
+	$farmer.offset = Vector2(10, 8)
+	$farmer.play("death")
+	await $farmer.animation_finished
 	queue_free()
 
 

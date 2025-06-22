@@ -172,8 +172,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_82e1h"]
 size = Vector2(43, 29)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j05ww"]
-size = Vector2(61, 10)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sru1b"]
+radius = 13.0
+height = 40.0
 
 [node name="Boar" type="CharacterBody2D"]
 collision_layer = 2
@@ -195,13 +196,13 @@ shape = SubResource("RectangleShape2D_82e1h")
 position = Vector2(-0.999999, -16)
 scale = Vector2(2.5, 1.6)
 
-[node name="StompDetector" type="Area2D" parent="."]
+[node name="HitDetector" type="Area2D" parent="."]
 modulate = Color(0, 0.32549, 1, 1)
-position = Vector2(0, -29)
-collision_layer = 2
+position = Vector2(-1, -14)
+rotation = -1.5708
+collision_layer = 0
+monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StompDetector"]
-position = Vector2(-1.5, -5)
-shape = SubResource("RectangleShape2D_j05ww")
-
-[connection signal="body_entered" from="StompDetector" to="." method="_on_stomp_detector_body_entered"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitDetector"]
+position = Vector2(-1, -1)
+shape = SubResource("CapsuleShape2D_sru1b")

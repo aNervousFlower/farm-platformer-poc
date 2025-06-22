@@ -1,6 +1,6 @@
 [gd_scene load_steps=29 format=3 uid="uid://pj1jsrbfu280"]
 
-[ext_resource type="Script" uid="uid://g6s7jaun3c2s" path="res://src/Actors/enemy.gd" id="1_j05ww"]
+[ext_resource type="Script" uid="uid://g6s7jaun3c2s" path="res://src/Actors/boar.gd" id="1_j05ww"]
 [ext_resource type="Texture2D" uid="uid://bsxxah8ptl710" path="res://assets/Legacy Fantasy High Forest/Mob/Boar/Hit-Vanish/Hit-Sheet.png" id="2_e2qeo"]
 [ext_resource type="Texture2D" uid="uid://bxcuf5sh3sr7n" path="res://assets/Legacy Fantasy High Forest/Mob/Boar/Idle/Idle-Sheet.png" id="3_0shdb"]
 [ext_resource type="Texture2D" uid="uid://c558cjk8qfnar" path="res://assets/Legacy Fantasy High Forest/Mob/Boar/Run/Run-Sheet.png" id="4_j7h6i"]

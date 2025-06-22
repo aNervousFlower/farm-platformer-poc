@@ -8,7 +8,7 @@ func _on_camera_smoothing_timer_timeout() -> void:
 	$Camera2D.position_smoothing_enabled = true
 
 
-func _on_enemy_detector_body_entered(_body: Node2D) -> void:
+func _on_hit_detector_body_entered(_body: Node2D) -> void:
 	is_dead = true
 	$farmer.offset = Vector2(10, 8)
 	$farmer.play("death")
@@ -20,6 +20,8 @@ func _physics_process(_delta: float) -> void:
 	var is_jump_interrupted: bool = Input.is_action_just_released("jump") and velocity.y < 0.0
 	var direction: Vector2 = get_direction()
 	velocity = calculate_move_velocity(velocity, direction, speed, is_jump_interrupted)
+	if Input.is_action_just_pressed("attack"):
+		perform_attack()
 	set_sprite_animation()
 	move_and_slide()
 
@@ -37,6 +39,8 @@ func calculate_move_velocity(
 		speed: Vector2,
 		is_jump_interrupted: bool
 	) -> Vector2:
+	if is_dead:
+		return Vector2.ZERO
 	var out: Vector2 = linear_velocigy
 	out.x = speed.x * direction.x
 	out.y += gravity * get_physics_process_delta_time()
@@ -50,6 +54,8 @@ func calculate_move_velocity(
 func set_sprite_animation() -> void:
 	if is_dead:
 		return
+	if not $SwordAttack/CollisionShape2D.disabled:
+		return
 	
 	if Input.is_action_pressed("move_right"):
 		$farmer.play("run")
@@ -59,3 +65,10 @@ func set_sprite_animation() -> void:
 		$farmer.flip_h = true
 	else:
 		$farmer.play("idle")
+
+
+func perform_attack() -> void:
+	$farmer.play("melee_attack")
+	$SwordAttack/CollisionShape2D.disabled = false
+	await $farmer.animation_finished
+	$SwordAttack/CollisionShape2D.disabled = true

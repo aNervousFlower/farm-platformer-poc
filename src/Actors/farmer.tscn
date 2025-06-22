@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://dw3nmgmr8pdqv"]
+[gd_scene load_steps=52 format=3 uid="uid://dw3nmgmr8pdqv"]
 
 [ext_resource type="Script" uid="uid://byvdj22cdnr4m" path="res://src/Actors/farmer.gd" id="1_82e1h"]
 [ext_resource type="Texture2D" uid="uid://bn5hycg5ef2bq" path="res://assets/Legacy Fantasy High Forest/Character/Dead/Dead-Sheet.png" id="2_v7tbs"]
@@ -132,22 +132,6 @@ region = Rect2(192, 0, 96, 80)
 [sub_resource type="AtlasTexture" id="AtlasTexture_31qdo"]
 atlas = ExtResource("7_sk2jg")
 region = Rect2(288, 0, 96, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uklbr"]
-atlas = ExtResource("7_sk2jg")
-region = Rect2(384, 0, 96, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wjkyj"]
-atlas = ExtResource("7_sk2jg")
-region = Rect2(480, 0, 96, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m1wau"]
-atlas = ExtResource("7_sk2jg")
-region = Rect2(576, 0, 96, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_52a0e"]
-atlas = ExtResource("7_sk2jg")
-region = Rect2(672, 0, 96, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w23yh"]
 atlas = ExtResource("8_m5nhn")
@@ -301,22 +285,10 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_31qdo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uklbr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wjkyj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m1wau")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_52a0e")
 }],
 "loop": false,
 "name": &"melee_attack",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -354,6 +326,9 @@ size = Vector2(16, 48)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dvj68"]
 size = Vector2(20, 52)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_v7tbs"]
+radius = 31.0161
+
 [node name="Farmer" type="CharacterBody2D"]
 collision_mask = 8
 script = ExtResource("1_82e1h")
@@ -363,8 +338,10 @@ gravity = 2000.0
 [node name="farmer" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -24)
 sprite_frames = SubResource("SpriteFrames_vjjp7")
-animation = &"idle"
+animation = &"melee_attack"
 autoplay = "idle"
+frame = 3
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -24)
@@ -389,15 +366,25 @@ wait_time = 0.1
 one_shot = true
 autostart = true
 
-[node name="EnemyDetector" type="Area2D" parent="."]
+[node name="HitDetector" type="Area2D" parent="."]
 modulate = Color(0, 0, 1, 1)
 collision_layer = 0
 collision_mask = 2
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetector"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitDetector"]
 position = Vector2(0, -24)
 shape = SubResource("RectangleShape2D_dvj68")
 
+[node name="SwordAttack" type="Area2D" parent="."]
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SwordAttack"]
+modulate = Color(0, 0, 1, 1)
+position = Vector2(10, -39)
+shape = SubResource("CircleShape2D_v7tbs")
+disabled = true
+
 [connection signal="timeout" from="CameraSmoothingTimer" to="." method="_on_camera_smoothing_timer_timeout"]
-[connection signal="body_entered" from="EnemyDetector" to="." method="_on_enemy_detector_body_entered"]
+[connection signal="body_entered" from="HitDetector" to="." method="_on_hit_detector_body_entered"]

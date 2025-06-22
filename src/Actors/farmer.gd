@@ -57,14 +57,25 @@ func set_sprite_animation() -> void:
 	if not $SwordAttack/CollisionShape2D.disabled:
 		return
 	
+	#turn in direction of movement
 	if Input.is_action_pressed("move_right"):
-		$farmer.play("run")
 		$farmer.flip_h = false
 	elif Input.is_action_pressed("move_left"):
-		$farmer.play("run")
 		$farmer.flip_h = true
-	else:
-		$farmer.play("idle")
+	
+	#set movement animation
+	if is_on_floor():
+		$farmer.offset = Vector2.ZERO
+		if Input.is_action_just_pressed("jump"):
+			$farmer.offset = Vector2(0,-8)
+			$farmer.play("jump")
+		elif velocity.x != 0:
+			$farmer.play("run")
+		else:
+			$farmer.play("idle")
+	elif $farmer.animation != "jump":
+		$farmer.offset = Vector2(0,-8)
+		$farmer.play("jump_down")
 
 
 func perform_attack() -> void:

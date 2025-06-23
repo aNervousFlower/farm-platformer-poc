@@ -169,12 +169,12 @@ animations = [{
 "speed": 7.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_82e1h"]
-size = Vector2(43, 29)
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sru1b"]
 radius = 13.0
 height = 40.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sru1b"]
+radius = 88.0057
 
 [node name="Boar" type="CharacterBody2D"]
 collision_layer = 2
@@ -190,8 +190,9 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.5, -14.5)
-shape = SubResource("RectangleShape2D_82e1h")
+position = Vector2(-2, -13)
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_sru1b")
 
 [node name="HitDetector" type="Area2D" parent="."]
 modulate = Color(0, 0.32549, 1, 1)
@@ -204,9 +205,18 @@ monitorable = false
 position = Vector2(-1, -1)
 shape = SubResource("CapsuleShape2D_sru1b")
 
+[node name="ProximityDetector" type="Area2D" parent="."]
+collision_layer = 0
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ProximityDetector"]
+modulate = Color(0.847284, 0.327594, 2.5028e-06, 1)
+position = Vector2(-2, -14)
+shape = SubResource("CircleShape2D_sru1b")
+
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
-position = Vector2(-1.5, -16)
-scale = Vector2(5.55, 1.6)
+position = Vector2(-1.99999, -16)
+scale = Vector2(8.9, 1.6)
 
 [node name="PacingTimer" type="Timer" parent="."]
 wait_time = 1.5
@@ -217,6 +227,8 @@ wait_time = 1.5
 one_shot = true
 
 [connection signal="area_entered" from="HitDetector" to="." method="_on_hit_detector_area_entered"]
+[connection signal="body_entered" from="ProximityDetector" to="." method="_on_proximity_detector_body_entered"]
+[connection signal="body_exited" from="ProximityDetector" to="." method="_on_proximity_detector_body_exited"]
 [connection signal="screen_entered" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_entered"]
 [connection signal="timeout" from="PacingTimer" to="." method="_on_pacing_timer_timeout"]
 [connection signal="timeout" from="PauseTimer" to="." method="_on_pause_timer_timeout"]

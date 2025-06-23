@@ -42,15 +42,20 @@ func _on_hit_detector_area_entered(area: Area2D) -> void:
 func _physics_process(delta: float) -> void:
 	if is_dead:
 		return
-	set_animation()
 	if farmer:
 		if facing.dot(position.direction_to(farmer.position)) < 0:
 			turn()
 		velocity.x = facing.x * speed.x * run_factor
 	elif $PauseTimer.is_stopped():
-		velocity.x = facing.x * speed.x
+		if is_on_wall():
+			$PacingTimer.stop()
+			$PauseTimer.start()
+			velocity = Vector2.ZERO
+		else:
+			velocity.x = facing.x * speed.x
 	else:
 		velocity = Vector2.ZERO
+	set_animation()
 	velocity.y += gravity * delta
 	move_and_slide()
 

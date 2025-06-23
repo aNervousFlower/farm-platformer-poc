@@ -11,15 +11,17 @@ config_version=5
 [application]
 
 config/name="Farm Platformer POC"
-run/main_scene="uid://cg24pgehl3n6m"
+run/main_scene="uid://3irbab4ncmrd"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+window/stretch/scale_mode="integer"
 
 [dotnet]
 

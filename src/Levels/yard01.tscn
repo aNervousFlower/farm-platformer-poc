@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://3irbab4ncmrd"]
+[gd_scene load_steps=7 format=4 uid="uid://3irbab4ncmrd"]
 
 [ext_resource type="Texture2D" uid="uid://bs5u2xbm0vya4" path="res://assets/Legacy Fantasy High Forest/Background/Background.png" id="1_458kj"]
 [ext_resource type="Texture2D" uid="uid://d1v5imrq3bj7a" path="res://assets/Legacy Fantasy High Forest/Assets/Tiles.png" id="2_h55t5"]
 [ext_resource type="PackedScene" uid="uid://dw3nmgmr8pdqv" path="res://src/Actors/farmer.tscn" id="3_ymvx1"]
+[ext_resource type="PackedScene" uid="uid://pj1jsrbfu280" path="res://src/Actors/boar.tscn" id="4_dsjf8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ymvx1"]
 resource_name = "Terrain"
@@ -720,8 +721,6 @@ physics_layer_0/collision_mask = 0
 sources/1 = SubResource("TileSetAtlasSource_ymvx1")
 
 [node name="Yard" type="Node2D"]
-metadata/_edit_vertical_guides_ = [592.0]
-metadata/_edit_horizontal_guides_ = [360.0]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -100
@@ -739,11 +738,14 @@ tile_map_data = PackedByteArray("AAAQAA0AAQABAAAAAAARAA0AAQACAAAAAAASAA0AAQABAAA
 tile_set = SubResource("TileSet_dsjf8")
 
 [node name="Farmer" parent="." instance=ExtResource("3_ymvx1")]
-position = Vector2(304, 222)
+position = Vector2(53, 172)
 
 [node name="Camera2D" parent="Farmer" index="2"]
 zoom = Vector2(2, 2)
 limit_right = 592
 limit_bottom = 360
+
+[node name="Boar" parent="." instance=ExtResource("4_dsjf8")]
+position = Vector2(409, 224)
 
 [editable path="Farmer"]

@@ -448,7 +448,7 @@ gravity = 2000.0
 [node name="farmer" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -24)
 sprite_frames = SubResource("SpriteFrames_vjjp7")
-animation = &"jump_down"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -456,8 +456,7 @@ position = Vector2(0, -24)
 shape = SubResource("RectangleShape2D_82e1h")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -85)
-zoom = Vector2(5, 5)
+position = Vector2(0, -50)
 limit_left = 0
 limit_top = 0
 limit_smoothed = true
